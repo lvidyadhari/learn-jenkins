@@ -21,17 +21,16 @@ pipeline {
                 echo 'Deploying'
             }
         }
-        //postbuild
-        post { 
-          always { 
+  // post build
+    post { 
+        always { 
             echo 'I will always say Hello again!'
-           }
-          failure { 
-            echo 'This shows when the pipeline is failure'
-          }
-          success { 
-            echo 'This shows when the pipeline is success'
-         }
+        }
+        failure { 
+            echo 'this runs when pipeline is failed, used generally to send some alerts'
+        }
+        success{
+            echo 'I will say Hello when pipeline is success'
         }
     }
 }
