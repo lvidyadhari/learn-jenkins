@@ -23,16 +23,16 @@ pipeline {
         }
 
         post { 
-        always { 
+          always { 
             echo 'I will always say Hello again!'
-        }
+           }
         
-        failure { 
+           failure { 
             echo 'This shows when the pipeline is failure'
-        }
-        success { 
+            }
+            success { 
             echo 'This shows when the pipeline is success'
-        }
+            }
         }
     }
 }
