@@ -33,7 +33,7 @@ pipeline {
         success { 
             echo 'This shows when the pipeline is success'
         }
-    }
+        }
     }
 }
 
