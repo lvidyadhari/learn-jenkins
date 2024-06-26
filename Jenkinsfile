@@ -21,6 +21,20 @@ pipeline {
                 echo 'Deploying'
             }
         }
+
+        post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+        
+        failure { 
+            echo 'This shows when the pipeline is failure'
+        }
+        success { 
+            echo 'This shows when the pipeline is success'
+        }
+    }
+    
     }
 }
 
