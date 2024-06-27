@@ -22,15 +22,15 @@ pipeline {
         }
       }
     post { 
-       always { 
-            echo 'I will always say Hello again!'
+        always { 
+          echo 'I will always say Hello again!'
         }
-       failure {
-        echo 'I show the message of failure'
-       }
-       success {
-        echo 'I show the message of success'
-       }
+        failure {
+         echo 'I show the message of failure'
+        }
+        success {
+         echo 'I show the message of success'
+        }
     }
   }
 }
