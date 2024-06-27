@@ -1,34 +1,44 @@
-pipeline {   //1
-    agent {   //2
-         node {  //3
+pipeline {   
+    agent {   
+         node {  
             label 'agent-1'
         //customWorkspace '/some/other/path'
-        } //3
-    } //2
+        } 
+    } 
     environment { 
         GREETING = 'Hello Jenkins'
     }
-    stages { //4
-        stage('Build') { //5
-           steps { //6
+    stages { 
+        stage('Build') { 
+           steps { 
               echo 'Hello'
-           } //6
-        } //5
-        stage('Test') { //7
+           } 
+        } 
+        stage('Test') { 
             steps { 
               echo 'Hi'  
            }
-        } //7
-        stage('Deploy') { //8
+        } 
+        stage('Deploy') { 
             steps {
-               echo 'Good Morning'
+               sh """
+                  echo "Here I wrote shellscript"
+                  echo "$GREETING"
+                  """
         }
-      } //8
+      } 
     }
     post { 
         always { 
             echo 'I will always say Hello again!'
         }
+        failure {
+            echo 'I will show a failure message'
+        }
+        success {
+            echo 'I will show a success message'
+        }
+     
     }
    //4
 } //1
