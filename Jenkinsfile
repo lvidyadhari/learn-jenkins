@@ -5,6 +5,9 @@ pipeline {   //1
         //customWorkspace '/some/other/path'
         } //3
     } //2
+    environment { 
+        GREETING = 'Hello Jenkins'
+    }
     stages { //4
         stage('Build') { //5
            steps { //6
