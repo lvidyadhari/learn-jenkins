@@ -21,10 +21,11 @@ pipeline {   //1
                echo 'Good Morning'
         }
       } //8
+    }
     post { 
         always { 
             echo 'I will always say Hello again!'
         }
     }
-  }  //4
+   //4
 } //1
