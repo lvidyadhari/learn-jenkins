@@ -1,36 +1,30 @@
-pipeline {
-    agent {
-         node {
+pipeline {   //1
+    agent {   //2
+         node {  //3
             label 'agent-1'
         //customWorkspace '/some/other/path'
-        }
-    }
-    stages {
-        stage('Build') {
-           steps {
+        } //3
+    } //2
+    stages { //4
+        stage('Build') { //5
+           steps { //6
               echo 'Hello'
-           }
-        }
-        stage('Test') {
+           } //6
+        } //5
+        stage('Test') { //7
             steps { 
               echo 'Hi'  
            }
-        }
-        stage('Deploy') {
+        } //7
+        stage('Deploy') { //8
             steps {
                echo 'Good Morning'
         }
-      }
+      } //8
     post { 
         always { 
-          echo 'I will always say Hello again!'
-        }
-        failure {
-         echo 'I show the message of failure'
-        }
-        success {
-         echo 'I show the message of success'
+            echo 'I will always say Hello again!'
         }
     }
-  }
-}
+  }  //4
+} //1
